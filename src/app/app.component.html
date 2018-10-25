@@ -1,7 +1,45 @@
-<div id="container">
-  <app-sidebar></app-sidebar>
+<nav class="navbar navbar-toggleable-md navbar-light bg-light">
+    <div id="wrap">
+        
+        <input id="search" name="search" type="text" placeholder="What're we looking for ?" [(ngModel)]="filter" 
+        (keyup.enter)="searchMovie(filter)"
+        class="form-control mr-sm-2" 
+        type="search" placeholder="Find movie..."><input id="search_submit" value="Search" type="submit">
 
-  <div id="content">
-    <router-outlet></router-outlet>
+      </div>
+    <!----<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarContent">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" [routerLink]="['']">TMDB</a>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['top_rated']">Top Rated</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['upcoming']">Upcoming</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['now_playing']">Now Playing</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['popular']">Popular</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+            <input [(ngModel)]="filter" 
+            (keyup.enter)="searchMovie(filter)"
+            name="search"
+            class="form-control mr-sm-2" 
+            type="search" placeholder="Find movie...">
+            <button class="btn btn-info my-2 my-sm-0" (click)="searchMovie(filter)">Search</button>
+      </form>
+    </div>
+  -->
+  </nav>
+  <div class="container">
+      <router-outlet></router-outlet>
+    <footer>
+      <a href="https://github.com/weronikafelczak" target="_blank">Weronika Felczak</a>
+    </footer>
   </div>
-</div>

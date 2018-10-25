@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { NgModel } from '@angular/forms';
+import { MoviesService } from './movies.service';
+
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'HttpClientTutorial';
+
+export class AppComponent implements OnInit {
+  filter = '';
+
+  constructor(
+    private movies: MoviesService,
+  ) {}
+  ngOnInit() {
+
+  }
+
+  searchMovie(filter) {
+    this.movies.emitChange(filter);
+  }
 }
